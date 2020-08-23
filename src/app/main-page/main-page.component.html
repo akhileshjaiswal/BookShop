@@ -1,0 +1,12 @@
+<app-header (book_name)='onSearch($event)'></app-header>
+<mat-progress-bar *ngIf='progress_bar' mode="indeterminate"></mat-progress-bar>
+<div *ngIf='no_content' class="no_content">
+    <h1>No Books</h1>
+</div>
+<div *ngIf='book_content' class="book_content">
+    <mat-card *ngFor='let book of main_book_dir'>
+        <img src="{{book.image}}" width="100%" height="80%" alt="">
+        <h5 title="{{book.title}}">{{book.name}}</h5>
+        <!-- <h5 title="{{book.publisher_title}}">{{book.publisher}}</h5> -->
+    </mat-card>
+</div>
