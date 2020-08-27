@@ -7,9 +7,9 @@
             <h2>Login</h2>
             <mat-form-field>
                 <mat-label>UserName</mat-label>
-                <input autocomplete="off" type="text" matInput [(ngModel)]='user_name'>
+                <input autocomplete="off" type="text" matInput [(ngModel)]='userName'>
             </mat-form-field>
-            <button mat-flat-button color='primary' [routerLink]='[user_name]'>Continue</button>
+            <button mat-flat-button color='primary' (click)='onContinue()'>Continue</button>
         </div>
     </div>
 </div>

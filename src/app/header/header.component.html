@@ -1,17 +1,17 @@
 <mat-toolbar color='primary' style="padding: 0;">
     <div class="logo">
-        <h3>BookShop.in</h3>
+        <h3 class="title_logo" routerLink='/books'>BookShop.in</h3>
     </div>
     <div class="right_side">
-        <h4>Hello, {{user_name}}</h4>
-        <div style="display: flex;align-items: flex-end;"><button mat-icon-button><mat-icon style="font-size: 35px;">shopping_cart</mat-icon></button>
+        <h4>Hello, {{userName}}</h4>
+        <div style="display: flex;align-items: flex-end;"><button routerLink='/cart' mat-icon-button><mat-icon matBadge='{{cartSize}}' matBadgeColor="warn" style="font-size: 35px;">shopping_cart</mat-icon></button>
             <h5>Cart</h5>
         </div>
     </div>
 </mat-toolbar>
-<mat-toolbar style="height: 40px;background-color:#ddd;">
+<mat-toolbar *ngIf='searchTool' style="height: 40px;background-color:#ddd;">
     <div class="search">
-        <input placeholder="Search for books here..." type="text" [(ngModel)]='search_value'>
-        <button mat-flat-button color='primary' (click)='onSearch()'><mat-icon>search</mat-icon></button>
+        <input placeholder="Search for books here..." type="text" [(ngModel)]='searchValue'>
+        <button mat-flat-button color='primary' [routerLink]='[searchValue]'><mat-icon>search</mat-icon></button>
     </div>
 </mat-toolbar>

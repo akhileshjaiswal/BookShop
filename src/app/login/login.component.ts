@@ -8,11 +8,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  user_name:string;
+  userName:string;
   constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-
+  onContinue(){
+    localStorage.setItem('userName',this.userName);
+    this.router.navigateByUrl('/books');
+  }
 
 }

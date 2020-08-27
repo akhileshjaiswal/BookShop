@@ -9,16 +9,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { CheckoutPageComponent } from './main_page/checkout-page/checkout-page.component';
-import { BookContentComponent } from './main_page/book-content/book-content.component';
+import { ShareService } from './share.service'
 
 
-import {MatCardModule} from '@angular/material/card';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+import { BookDetailComponent } from './main-page/book-detail/book-detail.component';
+import { BookListComponent } from './main-page/book-list/book-list.component';
+import { NoBooksComponent } from './main-page/no-books/no-books.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -27,8 +34,11 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     LoginComponent,
     HeaderComponent,
     MainPageComponent,
-    CheckoutPageComponent,
-    BookContentComponent
+    BookDetailComponent,
+    BookListComponent,
+    NoBooksComponent,
+    CheckoutComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,10 +51,12 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatBadgeModule,
+    MatSnackBarModule,
     MatProgressBarModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [ShareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

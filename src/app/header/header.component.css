@@ -8,6 +8,14 @@ mat-toolbar {
     padding-left: 1em;
 }
 
+.title_logo {
+    cursor: pointer;
+}
+
+.title_logo:focus {
+    outline: none;
+}
+
 .search {
     display: flex;
     flex: 1;

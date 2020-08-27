@@ -1,0 +1,8 @@
+<mat-progress-bar *ngIf='progressBar' mode="indeterminate"></mat-progress-bar>
+<div class="book_content">
+    <mat-card *ngFor='let book of mainBookDir'>
+        <img src="{{book.image}}" width="100%" height="80%" title="{{book.title}}" routerLink='{{book.id}}' alt="">
+        <h5 title="{{book.title}}">{{book.name}}</h5>
+        <h6 title="{{book.publisherDate}}">Published On: {{book.publisherDate}}</h6>
+    </mat-card>
+</div>

@@ -1,0 +1,19 @@
+<div class="mainDiv">
+    <div class="detailDiv">
+        <div class="bookDiv">
+            <img src="{{bookDetail.volumeInfo.imageLinks.thumbnail}}" height="100%" width="70%" style="border-radius: 5px;border:1px solid #ddd" alt="">
+        </div>
+        <div class="bookDetail">
+            <div style="color: #303030;">
+                <h3><b>Title: </b>{{bookDetail.volumeInfo.title}}({{bookDetail.volumeInfo.subtitle}})</h3>
+                <h3><b>Published By:</b> {{bookDetail.volumeInfo.publisher}}</h3>
+                <h3><b>Published On:</b> {{bookDetail.volumeInfo.publishedDate}}</h3>
+                <h3><b>Written By:</b> {{bookDetail.volumeInfo.authors}}</h3>
+                <h3><b>Rating:</b> {{bookDetail.volumeInfo.ratingsCount}}/5</h3>
+                <h2><b>Price:</b> {{price}}</h2>
+                <button mat-raised-button color='primary'>Buy Now</button>
+                <button (click)='openSnack()' style="margin-left: 1em;" mat-raised-button color='primary'><mat-icon>add_shopping_cart</mat-icon></button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
+import { ShareService } from '../share.service';
 
 @Component({
   selector: 'app-header',
@@ -7,19 +9,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  user_name: string;
-  search_value: string;
-  @Output() book_name: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private activeRoute: ActivatedRoute) { }
+  userName: string;
+  searchValue: string;
+  searchTool=true;
+  cartSize: number;
+  // @Output() bookName: EventEmitter<string> = new EventEmitter<string>();
+  constructor(private share:ShareService) { }
 
   ngOnInit(): void {
-    this.activeRoute.params.subscribe((res) => {
-      this.user_name = res.user_name;
-    });
-  }
-
-  onSearch() {
-    this.book_name.emit(this.search_value);
+    this.userName = localStorage.getItem('userName');
+    this.cartSize=this.share.cartDir.length;
   }
 
 }

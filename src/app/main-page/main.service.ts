@@ -11,23 +11,28 @@ export class MainService {
     }
 
     getMainData(data) {
+        this.main_book_dir=[];
         if (data.totalItems == 0) {
             return [];
         } else {
             data.items.forEach((book) => {
                 let name = this.getTrim(book.volumeInfo.title);
-                let publisher = book.volumeInfo.publisher;
-                publisher = publisher.substring(0, 18) + "...";
                 this.main_book_dir.push({
                     name: name,
                     id: book.id,
                     title: book.volumeInfo.title,
                     image: book.volumeInfo.imageLinks.thumbnail,
-                    publisher: publisher,
-                    publisher_title: book.volumeInfo.publisher
+                    publisherDate: book.volumeInfo.publishedDate,
                 });
             });
             return this.main_book_dir;
+        }
+    }
+    getMainData2(data) {
+        if (data.totalItems == 0) {
+            return [];
+        } else {
+            return data.items[0];
         }
     }
 

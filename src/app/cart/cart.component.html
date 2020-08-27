@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div style="padding: 0 1em 0 1em;margin-top: 1em;">
+    <h2>Shopping Cart</h2>
+</div>
+<div class="cartEmpty" *ngIf='cartEmpty'>
+    Your cart is empty !
+</div>
+<div *ngIf='cartShow' class="mainDiv">
+    <div class="card" *ngFor='let cart of cartDir'>
+        <div class="first">
+            <img style="border:1px solid #ddd;border-radius:5px" src="{{cart.image}}" width="60%" height="80%" alt="">
+        </div>
+        <div class="second">
+            <h4><b>Title: </b>{{cart.title}}</h4>
+            <h3><b>Price: </b>{{cart.price}}</h3>
+        </div>
+        <div class="third">
+            <button (click)='toDelete(cart.id)' mat-icon-button><mat-icon>close</mat-icon></button>
+        </div>
+    </div>
+</div>
