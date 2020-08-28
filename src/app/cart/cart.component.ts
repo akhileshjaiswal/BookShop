@@ -9,7 +9,8 @@ import { ShareService } from '../share.service';
 export class CartComponent implements OnInit {
   cartDir=[];
   cartEmpty: boolean=true;
-  cartShow:boolean=false
+  cartShow:boolean=false;
+  totalAmount;
   constructor(private shareSer:ShareService) { }
 
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class CartComponent implements OnInit {
       this.cartEmpty=false;
       this.cartShow=true;
     }
+    this.totalAmount=this.shareSer.getTotalAmount();
   }
 
   toDelete(id){

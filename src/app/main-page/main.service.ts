@@ -37,10 +37,10 @@ export class MainService {
     }
 
     getTrim(name) {
-        if (name.length < 20) {
+        if (name.length < 19) {
             return name;
         } else {
-            return name.substring(0, 20) + "...";
+            return name.substring(0, 19) + "...";
         }
     }
 }

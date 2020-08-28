@@ -20,10 +20,8 @@ export class BookListComponent implements OnInit {
     this.books=null;
     this.mainBookDir=[];
     this.activeroute.params.subscribe((res) => {
-      console.log(res)
       this.bookName = res['bookName'];
       this.getData(this.bookName);
-      // console.log(this.bookName)
     });
 
   }
@@ -37,11 +35,9 @@ export class BookListComponent implements OnInit {
       if (this.books.length == 0) {
         this.router.navigateByUrl('/books')
       } else {
-        console.log(this.mainBookDir)
         this.mainBookDir=null;
         this.mainBookDir = this.books;
         this.progressBar = false;
-        console.log(this.mainBookDir)
       }
     });
   }

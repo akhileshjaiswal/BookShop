@@ -32,3 +32,7 @@ h1,
 h3 {
     margin: 0;
 }
+
+.panel {
+    background-color: red;
+}

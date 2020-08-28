@@ -18,4 +18,15 @@ export class ShareService {
             }
         }
     }
+
+    getTotalAmount(){
+        let amount=0;
+        var code;
+        for(let i=0;i<this.cartDir.length;i++){
+            var arr=this.cartDir[i].price.split(' ');
+            code=arr[0];
+            amount=amount+parseInt(arr[1]);
+        }
+        return code+" "+amount;
+    }
 }

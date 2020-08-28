@@ -1,7 +1,7 @@
 .noBooks {
     display: flex;
     flex: 1;
-    height: 100%;
+    height: 73vh;
     justify-content: center;
     align-items: center;
     font-size: 25px;

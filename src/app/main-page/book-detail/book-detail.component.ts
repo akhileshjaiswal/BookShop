@@ -26,7 +26,6 @@ export class BookDetailComponent implements OnInit {
   getData(bookId) {
     this.mainSer.getURLData(bookId).subscribe((res) => {
       this.bookDetail = this.mainSer.getMainData2(res);
-      console.log(this.bookDetail);
       if (this.bookDetail.saleInfo.saleability == 'FOR_SALE') {
         this.price = this.bookDetail.saleInfo.listPrice.currencyCode + " " + this.bookDetail.saleInfo.listPrice.amount;
       } else {
@@ -40,7 +39,8 @@ export class BookDetailComponent implements OnInit {
     if(this.price=='Not Available'){
       this.snackBar.open('Price is not available & not added to cart','',{
         duration:2000,
-        verticalPosition:'top'
+        verticalPosition:'top',
+        panelClass:'panel'
       });
     }else{
     this.shareSer.pushToCartDir({id:this.bookDetail.id,title:title,price:this.price,image:this.bookDetail.volumeInfo.imageLinks.thumbnail});
